@@ -59,6 +59,10 @@ The GearVR headset contains a **touchpad** on the right side of the headset. The
 
 When looking at a selectable object with the GearVR, the object will indicate it can be interacted with. The object can be selected by tapping the center of the touchpad.
 
+### GearVR Controller (GearVR)
+
+The GearVR Controller has the combined functions of the **exploration controller** and the **runtime controller** integrated together. The **trigger** is used for selection, the **touchpad** is used for scrolling and stepping, and the **back button** is used for escaping.
+
 ## Selecting a Project
 
 1. Select the **Load new...** button on the menu.
@@ -73,13 +77,13 @@ When looking at a selectable object with the GearVR, the object will indicate it
 
 ## Navigating the Project
 
-### Moving the World (Vive and Rift)
+### Moving the World
 
 1. Aim at an **empty spot** on the ground.
 
     ![](images/movement.jpg)
 
-1. Hold down the **trigger** on the **exploration** wand (on Vive) or controller (on Rift), then move the wand or controller to move the world.
+1. Hold down the **trigger** on the **exploration** wand (on Vive) or controller (on Rift or GearVR Controller), then move the wand or controller to move the world.
 
 1. Release the **trigger** to stop moving the world.
 
@@ -89,15 +93,15 @@ When looking at a selectable object with the GearVR, the object will indicate it
 
     ![](images/aiming-at-package.jpg)
 
-1. The first **class** in the **directory** will be selected and will have an arrow next to it. Scroll through the **classes** with the up and down buttons on the **exploration wand** trackpad (on Vive), by pressing up and down on the **exploration controller** joystick (on Rift), or by swiping up and down on the **GearVR touchpad** (on GearVR).
+1. The first **class** in the **directory** will be selected and will have an arrow next to it. Scroll through the **classes** with the up and down buttons on the **exploration wand** trackpad (on Vive or GearVR Controller), by pressing up and down on the **exploration controller** joystick (on Rift), or by swiping up and down on the **GearVR touchpad** (on GearVR).
 
     ![](images/looking-at-class.jpg)
 
-1. Open a class by pressing the center of the **exploration wand** trackpad (on Vive), by pressing the **A button** (on Rift), or tapping on the **GearVR touchpad** (on GearVR). The **methods** and **fields** of the class are now listed.
+1. Open a class by pressing the center of the **exploration wand** trackpad (on Vive or GearVR Controller), by pressing the **A button** (on Rift), or tapping on the **GearVR touchpad** (on GearVR). The **methods** and **fields** of the class are now listed.
 
     ![](images/looking-at-method.jpg)
 
-1. The **source code** can be moved up and down by aiming at the source code and dragging the source code with the **trigger** (on Vive and Rift).
+1. The **source code** can be moved up and down by aiming at the source code and dragging the source code with the **trigger** (on Vive, Rift, and GearVR Controller).
 
 ### Closing Classes and Directories
 
@@ -115,9 +119,9 @@ If a method calls out to other methods within the project, the source code for t
 
 ![](images/selectable-link.jpg)
 
-1. While selected on a method or expanded class, press the "link" button on the **exploration wand** trackpad (on Vive) or the **A button** (on Rift) to view the references to and from that method or class. Not all methods and classes have references.
+1. While selected on a method or expanded class, press the "link" button on the **exploration wand** trackpad (on Vive or GearVR Controller) or the **A button** (on Rift) to view the references to and from that method or class. Not all methods and classes have references.
 
-1. A menu will appear next to the method or class showing the different types of references available for that method or class. Press the up and down buttons on the **exploration wand** touch pad (on Vive), press up and down on the **exploration controller** joystick (on Rift) or swipe up and down on the **GearVR touchpad** (GearVR) to select a different type of reference.
+1. A menu will appear next to the method or class showing the different types of references available for that method or class. Press the up and down buttons on the **exploration wand** touch pad (on Vive or GearVR Controller), press up and down on the **exploration controller** joystick (on Rift) or swipe up and down on the **GearVR touchpad** (GearVR) to select a different type of reference.
 
     Not all methods and classes have more than one type of reference.
 
@@ -139,11 +143,11 @@ If a method calls out to other methods within the project, the source code for t
 
     ![](images/timeline.jpg)
 
-1. The runtime can be toggled in and out of **fast step** mode by pressing the "fast forward" button in the middle of the **runtime wand** trackpad (on Vive), pressing the **X button** (on Rift) or tapping the middle of the **GearVR touchpad** (on GearVR).
+1. The runtime can be toggled in and out of **fast step** mode by pressing the "fast forward" button in the middle of the **runtime wand** trackpad (on Vive or GearVR Controller), pressing the **X button** (on Rift) or tapping the middle of the **GearVR touchpad** (on GearVR).
 
 ### Exiting the Runtime
 
-1. The runtime can be exited by pressing the menu button on the **runtime wand** (on Vive), the **X button** (on Rift), or by selecting the **EXECUTE** button on the menu (on GearVR).
+1. The runtime can be exited by pressing the menu button on the **runtime wand** (on Vive), the **X button** (on Rift), the **back button** or by selecting the **EXECUTE** button on the menu (on GearVR).
 
 ### Runtime Objects
 
@@ -161,11 +165,11 @@ Not all objects in the runtime are active on the currently executing call stacks
 
     ![](images/call-stack-mode.jpg)
 
-1. To view the source code of methods on one of the call stacks, aim at the call stack and select it. The lowest method will be selected and the source code will be visible.
+1. To view the source code of methods on one of the call stacks, aim at the call stack and select an object on the stack. The lowest method on the object will be selected and the source code will be visible.
 
     ![](images/call-stack-mode-selected.jpg)
 
-1. Scroll through the methods on the call stack by pressing up and down on the **exploration wand** trackpad (on Vive), by pressing up and down on the **exploration controller** joystick (on Rift), or by swiping up and down on the **GearVR touchpad** (on GearVR).
+1. Scroll through the methods on the call stack by pressing up and down on the **exploration wand** trackpad (on Vive), by pressing up and down on the **exploration controller** joystick (on Rift).
 
 ### Viewing the Method Call Heatmap
 
