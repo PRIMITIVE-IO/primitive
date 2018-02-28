@@ -171,6 +171,24 @@ Not all objects in the runtime are active on the currently executing call stacks
 
 1. Scroll through the methods on the call stack by pressing up and down on the **exploration wand** trackpad (on Vive), by pressing up and down on the **exploration controller** joystick (on Rift).
 
+### Setting Breakpoints
+
+It is possible to set a breakpoint on individual methods.
+
+1. *When not in runtime mode*, navigate to a method.
+
+1. Press the left button on the **exploration wand** trackpad (on Vive), press left on the **exploration controller** joystick (on Rift) or press the left button on the **GearVR touchpad** (on GearVR). This sets a breakpoint on that method, and the icon next to the method turns red.
+
+    ![](images/set-breakpoint.jpg)
+
+    To remove the breakpoint, press the right button on the **exploration wand** trackpad (on Vive), press right on the **exploration controller** joystick (on Rift) or press the right button on the **GearVR touchpad** (on GearVR).
+
+1. Switch to runtime mode. The execution timeline will now show red lines at all points in the execution where the methods with breakpoints are executed. If no lines appear, the methods with breakpoints are not executed in the particular recording being shown.
+
+   ![](images/breakpoints-on-timeline.jpg)
+
+1. To jump to one of the points in time when a breakpointed method is executed, aim at one of the red lines and select the line.
+
 ### Viewing the Method Call Heatmap
 
 If a project has a recorded runtime, then it's possible to see how many times each method in the project was called. *When not in runtime mode*, press the "heatmap" button on the **runtime wand** trackpad (on Vive) or press up on the **runtime controller** joystick (on Rift).
