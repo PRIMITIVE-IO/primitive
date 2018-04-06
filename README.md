@@ -59,8 +59,6 @@ The GearVR headset contains a **touchpad** on the right side of the headset. The
 
 When looking at a selectable object with the GearVR, the object will indicate it can be interacted with. The object can be selected by tapping the center of the touchpad.
 
-Holding down the touchpad for 3 seconds will allow the user to teleport to the point that they are looking at on the ground.
-
 ### GearVR Controller (GearVR)
 
 The GearVR Controller has the combined functions of the **exploration controller** and the **runtime controller** integrated together. The **trigger** is used for selection, the **touchpad** is used for scrolling and stepping, and the **back button** is used for escaping.
@@ -81,6 +79,8 @@ The GearVR Controller has the combined functions of the **exploration controller
 
 ### Moving the World
 
+#### With Controllers
+
 1. Aim at an **empty spot** on the ground.
 
     ![](images/movement.jpg)
@@ -89,7 +89,9 @@ The GearVR Controller has the combined functions of the **exploration controller
 
 1. Release the **trigger** to stop moving the world.
 
-Holding down the GearVR touchpad for 3 seconds will allow the user to teleport to the point that they are looking at on the ground.
+#### GearVR without Controllers
+
+1. Holding down the GearVR touchpad for 3 seconds will allow the user to teleport to the point that they are looking at on the ground.
 
 ### Opening and Browsing a Directory
 
