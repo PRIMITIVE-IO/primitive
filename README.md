@@ -89,7 +89,7 @@ The GearVR Controller has the combined functions of the **exploration controller
 
 1. Release the **trigger** to stop moving the world.
 
-1. Holding down the GearVR touchpad for 3 seconds will allow the user to teleport to the point that they are looking at on the ground.
+Holding down the GearVR touchpad for 3 seconds will allow the user to teleport to the point that they are looking at on the ground.
 
 ### Opening and Browsing a Directory
 
