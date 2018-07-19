@@ -2,7 +2,7 @@
 
 ---
 
-**Primitive is only available to alpha testers who have [signed up for early access on our website](https://primitive.io/). If you'd like access, please sign up. If you're interested in using Primitive as part of a larger organization, please reach out to us at [support@primitive.io](mailto:support@primitive.io).**
+**Primitive is available on Viveport and to alpha testers who have [signed up for early access on our website](https://primitive.io/). If you'd like access, please sign up. If you're interested in using Primitive as part of a larger organization, please reach out to us at [support@primitive.io](mailto:support@primitive.io).**
 
 ---
 
@@ -10,7 +10,9 @@
 
 ## Downloading Primitive
 
-If you have access to the alpha program, you can download Primitive via the following distribution platforms:
+You can download the demo of Primitive from [Viveport](https://www.viveport.com/apps/675c92c6-7df2-4ee3-b919-1bfbb6e5e8cc).  
+
+If you have signed up for the alpha program, you can download Primitive via the following distribution platforms:
 
 - [Steam](http://store.steampowered.com/app/777890/Primitive/). Download through Steam if you have an **HTC Vive**, **Oculus Rift** or a **Windows MR headset**. You will need a Steam key.
 - Oculus Home. Download through Oculus Home if you have a **GearVR headset**. You will need to be added to the Primitive alpha channel.
