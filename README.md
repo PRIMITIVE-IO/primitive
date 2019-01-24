@@ -143,7 +143,7 @@ If a method calls out to other methods within the project, the source code for t
 
 ## Viewing the Project Runtime (select projects only)
 
-1. If the current project has a recorded runtime, the runtime can be viewed by pressing the **runtime wand** "play" button (on Vive), the **X button** (on Rift), or the **GearVR** back button (on GearVR).
+1. If the current project has a recorded runtime, the runtime can be viewed by finding and selecting the "EXECUTE" handle on a launcher class in the model.
 
 1. The runtime can be **stepped through** by pressing the "next" button on the right of the **runtime wand** trackpad (on Vive), pressing right on the **runtime controller** joystick (on Rift), or pressing right on the **GearVR touchpad** (on GearVR).
 
