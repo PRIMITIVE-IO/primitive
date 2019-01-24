@@ -2,20 +2,22 @@
 
 ---
 
-**Primitive is available on Viveport and to alpha testers who have [signed up for early access on our website](https://primitive.io/). If you'd like access, please sign up. If you're interested in using Primitive as part of a larger organization, please reach out to us at [support@primitive.io](mailto:support@primitive.io).**
+**Primitive is available on [Viveport](https://www.viveport.com/apps/675c92c6-7df2-4ee3-b919-1bfbb6e5e8cc/Primitive/) and [Steam](https://store.steampowered.com/app/777890/Primitive/) for non-commercial use. If you're interested in using Primitive as part of a larger organization, please reach out to us at [support@primitive.io](mailto:support@primitive.io).**
 
 ---
 
 ![](images/idea-refactoring.jpg)
 
-## Downloading Primitive
+## Running your own analysis (free for non-commercial use)
 
-You can download the demo of Primitive from [Viveport](https://www.viveport.com/apps/675c92c6-7df2-4ee3-b919-1bfbb6e5e8cc).  
+Download our [Plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/11587-primitive-vr-java-analyzer) or our [Plugin for Visual Studio](https://marketplace.visualstudio.com/items?itemName=Primitive.PrimitiveVRCSharpAnalyzer) or from the marketplace within each IDE. After installing, a new menu item will appear that will allow you to generate a .analysis file for viewing.
 
-If you have signed up for the alpha program, you can download Primitive via the following distribution platforms:
+In IntelliJ IDEA: Go to Primitive -> Generate Static Analysis
+In Visual Studio: Go to Tools -> Generate Static Analysis for Solution
 
-- [Steam](http://store.steampowered.com/app/777890/Primitive/). Download through Steam if you have an **HTC Vive**, **Oculus Rift** or a **Windows MR headset**. You will need a Steam key.
-- Oculus Home. Download through Oculus Home if you have a **GearVR headset**. You will need to be added to the Primitive alpha channel.
+The output will generate a project-name.analysis file (or git-head-hash.analysis file if project is under source control). This file can be placed within ..\PRIMITIVE\PRIMITIVE_Data\StreamingAssets\analyzed-programs\name-of-your-project\
+
+When you launch Primitive, the 3D analysis will be visible from the "Load new..." menu.
 
 ## First Impressions
 
