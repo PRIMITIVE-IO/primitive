@@ -8,28 +8,27 @@
 
 ![](images/idea-refactoring.jpg)
 
-## Running your own analysis (free for non-commercial use)
+## View your own repo (free for non-commercial use)
 
-Download our [Plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/11587-primitive-vr-java-analyzer) or our [Plugin for Visual Studio](https://marketplace.visualstudio.com/items?itemName=Primitive.PrimitiveVRCSharpAnalyzer) or from the marketplace within each IDE. After installing, a new menu item will appear that will allow you to generate a .analysis file for viewing.
+In the `environment.yaml` file in  
+Steam Installation: `C:\Program Files (x86)\Steam\steamapps\common\Primitive\PRIMITIVE_Data\StreamingAssets`
+Viveport Installation: `TBD`
 
-In IntelliJ IDEA: Go to Primitive -> Generate Static Analysis
-In Visual Studio: Go to Tools -> Generate Static Analysis for Solution
+edit  
+```
+localDirectories:
+  directories:
+     - C:\path\to\my\repo1
+     - C:\path\to\my\repo2
+```
 
-The output will generate a project-name.analysis file (or git-head-hash.analysis file if project is under source control). This file can be placed within ..\PRIMITIVE\PRIMITIVE_Data\StreamingAssets\analyzed-programs\name-of-your-project\
-
-When you launch Primitive, the 3D analysis will be visible from the "Load new..." menu.
+Your folders containing files and source code will now be visible on the "Local" browser sphere.  
 
 ## First Impressions
 
-In Primitive, there are two display areas:
+In Primitive, there is a nested sphere containing analyses. Selecting an analysis will "land" you on the analysis.  
 
-1. **The Menu.** Located at head-level, the **menu** displays the name of the Java project being viewed, and also a button for changing projects.
-
-    ![](images/menu.jpg)
-
-1. **The Model.** Located on the floor, the **model** is a representation of the code in the current project. It is organized into a **directory map**. Each **directory** contains **classes** with source code.
-
-    ![](images/directory-map.jpg)
+Select the `Return` button to return to the global view.  
 
 ## Controls
 
