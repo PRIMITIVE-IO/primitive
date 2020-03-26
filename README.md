@@ -11,8 +11,8 @@
 ## View your own repo (free for non-commercial use)
 
 In the `environment.yaml` file in  
-Steam Installation: `C:\Program Files (x86)\Steam\steamapps\common\Primitive\PRIMITIVE_Data\StreamingAssets`
-Viveport Installation: `TBD`
+Steam Installation: `C:\Program Files (x86)\Steam\steamapps\common\Primitive\PRIMITIVE_Data\StreamingAssets`  
+Viveport Installation: `C:\...\675c92c6-7df2-4ee3-b919-1bfbb6e5e8cc\...\Primitive\PRIMITIVE_Data\StreamingAssets`  
 
 edit  
 ```
