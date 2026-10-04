@@ -1,4 +1,140 @@
-# Primitive Immersive Development Environment - User Manual
+# Primitive — Holographic Agent Control
+
+Step inside your software. Primitive brings code structure, runtime behavior, and coding agents into a shared 3D workspace in VR, mixed reality, or on a screen. Point at a method, give Claude Code or Codex direction, and inspect the code they change.
+
+[Explore Primitive](https://primitive.io/) · [Request a demo or developer access](https://primitive.io/join/) · [Proxy documentation (access required)](https://github.com/PRIMITIVE-IO/primitive-proxy) · [Unity viewer (access required)](https://github.com/PRIMITIVE-IO/primitive-env/tree/main/Assets/PrimitiveViewer)
+
+**This guide covers the current developer build.** It requires access to the proxy and viewer repositories; this repository is the public instruction page. Those repositories are not currently publicly accessible: request developer access before following the clone instructions. Earlier Steam, Viveport, and SideQuest releases are the legacy immersive development environment, and do not provide the agent workspace described here. Their original manual is preserved at the end.
+
+## What you can do
+
+| Capability | In the workspace |
+| --- | --- |
+| Direct coding agents | Start installed Claude Code or Codex in a project; speak or type with selection and pointing context; follow agent highlights and narration. |
+| Understand code | Explore radial maps of directories, files, classes, methods, and fields; inspect method-level changes against Git HEAD. |
+| Follow execution | Play recorded workflows, step through call stacks, and inspect captured object and data changes. Capture detail varies by tracer. |
+| Connect locations | See the PC, phone, server, and headset as islands, with requests between them; connect other proxy machines. |
+| Inspect graphs | Open Blueprint-style class graphs or the flow of a recorded call, with typed pins and data wires. |
+| Keep outputs nearby | Bring the agent test browser, monitors, windows, and an attached Android phone into VR as screen panels. |
+| Work together | Connect VR, desktop, and browser viewers to share the world, playback position, highlights, and agents. |
+
+## Start on a desktop
+
+Prerequisites: granted repository access, Git, and the .NET 10 SDK. Authenticate GitHub with the account that has access. Python 3.9+ is needed to record Python traces, but the demo already includes recordings. For agents, install and authenticate Claude Code and/or Codex on the machine running the proxy.
+
+After access is granted, clone and start the proxy:
+
+```powershell
+git clone https://github.com/PRIMITIVE-IO/primitive-proxy.git
+cd primitive-proxy
+dotnet run --project src/Primitive.Proxy -- --demo
+```
+
+Open [localhost:7420](http://localhost:7420/) for the browser viewer. The demo includes five sample workflows: ETL, a phone/API/SQLite flow, a state store, a threaded queue, and a headset game loop.
+
+For the full desktop or VR viewer, clone [primitive-env](https://github.com/PRIMITIVE-IO/primitive-env) and open it in the Unity version recorded in its `ProjectSettings/ProjectVersion.txt`. In Unity select **Primitive → Open Viewer Scene**, then **Play**, while the proxy is running. With an OpenXR headset connected it starts in VR; otherwise it runs on a flat screen.
+
+## Bring your own code
+
+Run from the proxy repository, replacing the example path:
+
+```powershell
+dotnet run --project src/Primitive.Proxy -- --root C:\code\my-app
+```
+
+`--root` is repeatable. Source structure is analyzed with tree-sitter for C#, Python, TypeScript/TSX, JavaScript, Java, Go, Rust, C, C++, Ruby, PHP, Scala, and Bash. Files are watched and compared against Git HEAD at method level.
+
+Use `--fs C:\path\to\workspace` to map a folder tree and discover projects, or `--analyses C:\path\to\analyses` to load legacy FileParser databases. The proxy README explains analysis caching, language support, and optional FileParser setup.
+
+## Direct an agent
+
+1. Open a project and select an element you want to work on.
+2. Use **Start Claude here** / **Start Codex here** on a project pad, or **+ Claude** / **+ Codex** in the viewer menu.
+3. Press **Enter** to type, or hold **V** to speak on the desktop. On Quest, hold a right thumb–middle-finger pinch, speak, then release.
+4. Try “claude, explain this method” or “codex, add a test for this.” The agent receives your selection and pointing context.
+5. Ask “explain the changes” to walk through the diff with highlights.
+
+The optional voice assistant needs an OpenAI key file configured on the proxy:
+
+```powershell
+dotnet run --project src/Primitive.Proxy -- --root C:\code\my-app --openai-key-file C:\secrets\openai-key.txt
+```
+
+The key is read by the proxy and is not sent to viewers. Without it, supported command phrases route navigation, playback, and named agent requests; voice transcription depends on the viewer or configured speech-to-text tool.
+
+Supported permission requests appear as notices and can be answered with **Approve / Deny** or by voice. Approval behavior depends on the agent integration: the current Codex bridge uses workspace-write with approval policy set to never. Do not assume every agent action produces a prompt. Review the proxy documentation and your provider settings before connecting private code.
+
+## Quest 3: standalone VR and passthrough
+
+The developer viewer supports Quest hand tracking and passthrough. Building and sideloading requires Unity Android build support, a headset in developer mode, and Android platform tools.
+
+1. Start the proxy with `--lan` (add `--root` or `--demo` and optional voice configuration):
+
+   ```powershell
+   dotnet run --project src/Primitive.Proxy -- --demo --lan
+   ```
+
+2. In the Unity viewer project select **Primitive → Quest → Build**. Keep the proxy running so the build can fetch its local pairing. The output is `Builds/Quest/Primitive.apk`.
+3. Connect the Quest by USB, allow USB debugging, and run these commands from the viewer repository:
+
+   ```powershell
+   adb install -r Builds/Quest/Primitive.apk
+   adb reverse tcp:7420 tcp:7420
+   adb shell am start -n com.primitive.viewer/com.unity3d.player.UnityPlayerGameActivity
+   ```
+
+USB reverse connects the headset to the proxy without a network route. Unplugged, the paired build uses the LAN addresses. Allow the proxy on your private network when prompted, and keep the PC and headset on the same network. See the [viewer README (access required)](https://github.com/PRIMITIVE-IO/primitive-env/tree/main/Assets/PrimitiveViewer) for pairing, gesture details, and troubleshooting.
+
+## Essential controls
+
+| Action | Full desktop viewer | Quest hands |
+| --- | --- | --- |
+| Select | Click | Right thumb + index tap |
+| Move around | WASD / Q / E; right-drag to look | Left thumb + index, hold and move the world |
+| Scale / turn the world | Mouse wheel dollies the camera | Both thumbs + index, hold |
+| Talk | Enter to type; hold V to speak | Right thumb + middle, hold; release to send |
+| Open a graph | G | Right thumb + ring |
+| Play / pause | Space | Left thumb + ring |
+| Step through a trace | Left / right arrows | Playback controls in the menu |
+| Back / clear selection | Esc | Left thumb + middle |
+| Open the menu | Desktop HUD | Left palm toward you, thumb + index |
+
+Browser controls differ from the full Unity desktop viewer. For the complete controls, panel gestures, and selection behavior, use the viewer README.
+
+## Record and inspect runtime behavior
+
+The demo traces work immediately. For your own Python workflow, from the proxy repository:
+
+```powershell
+$env:PYTHONPATH = "tracers/python"
+python -m primitive_trace --workflow checkout --location-kind server C:\code\my-app\app.py
+```
+
+Traces are written into the workflow root’s `.primitive/traces/` folder and picked up by the proxy watching that root. Python capture includes calls, arguments, return values, object creation, field/container mutations, locals, and SQLite/file/HTTP I/O. See the [Python tracer guide (access required)](https://github.com/PRIMITIVE-IO/primitive-proxy/tree/main/tracers/python) for capture setup.
+
+Other services can send OTLP/HTTP JSON spans to `http://localhost:7420/v1/traces`. These provide span-level behavior rather than Python’s full mutation capture. Companion .NET and Unity tracing tools and a legacy trace converter are documented in their product repositories.
+
+## Screens and shared sessions
+
+Say “show me the browser,” “open localhost 3000,” or “show my phone” to bring outputs into view. The agent test browser uses an isolated profile: use it for app testing, and avoid signing into real accounts. Physical monitor/window control is off by default and requires proxy configuration plus **Allow control** on the panel.
+
+For additional viewers, start the proxy with `--lan` and follow its token pairing instructions. Shared viewers see the same world, highlights, playback, and agents. To connect another machine, follow **Network: more machines** in the proxy README; keep tokens in files and use TLS for public connections.
+
+## If something is missing
+
+- **No world:** confirm the proxy is running, try the browser viewer locally, and check the Unity viewer connection.
+- **Agent cannot start:** confirm its CLI is installed and authenticated on the proxy machine. The proxy accepts `--claude` / `--codex` paths when discovery fails.
+- **No runtime:** source analysis alone does not record execution. Load demo traces or capture a workflow using a supported tracer.
+- **Quest cannot connect:** rebuild with the proxy running, check USB debugging and `adb reverse`, then consult pairing instructions before switching to LAN.
+
+Want a guided walkthrough or to explore a team pilot? [Request a conversation](https://primitive.io/join/) or email [john@primitive.io](mailto:john@primitive.io).
+
+---
+
+<details>
+<summary>Legacy release manual — Vive, Rift, and GearVR</summary>
+
+# Primitive Immersive Development Environment — Legacy User Manual
 
 ---
 
@@ -207,3 +343,5 @@ If a project has a recorded runtime, then it's possible to see how many times ea
 Methods with **red** particles on them are called the most number of times relative to other methods in the project. Methods with **blue** particles are not called as many times.
 
 Method call counts are applicable for the recorded runtime associated with the project.
+
+</details>
