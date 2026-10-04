@@ -1,8 +1,16 @@
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="images/Primitive.png"><img src="images/logo_small_black.png" width="320" alt="Primitive original logo"></picture></p>
+
 # Primitive — Holographic Agent Control
 
 Step inside your software. Primitive brings code structure, runtime behavior, and coding agents into a shared 3D workspace in VR, mixed reality, or on a screen. Point at a method, give Claude Code or Codex direction, and inspect the code they change.
 
 [Explore Primitive](https://primitive.io/) · [Request a demo or developer access](https://primitive.io/join/) · [Proxy documentation (access required)](https://github.com/PRIMITIVE-IO/primitive-proxy) · [Unity viewer (access required)](https://github.com/PRIMITIVE-IO/primitive-env/tree/main/Assets/PrimitiveViewer)
+
+[![Watch the original Primitive landing video](images/primitive-film.jpg)](https://www.youtube.com/watch?v=KVZ9u3BIUBg)
+
+**[Watch the original Primitive film →](https://www.youtube.com/watch?v=KVZ9u3BIUBg)**
+
+The original landing video shows Primitive’s immersive code visualization and collaboration. Holographic Agent Control builds on that foundation.
 
 **This guide covers the current developer build.** It requires access to the proxy and viewer repositories; this repository is the public instruction page. Those repositories are not currently publicly accessible: request developer access before following the clone instructions. Earlier Steam, Viveport, and SideQuest releases are the legacy immersive development environment, and do not provide the agent workspace described here. Their original manual is preserved at the end.
 
