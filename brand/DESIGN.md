@@ -3,20 +3,21 @@
 **Tagline:** Primitive is back. Agent Swarm control in cyberspace.
 
 The identity is built on the **official Primitive logo**: a row of outlined circles (2, 3, 5, then 7 in a hex cluster) above
-the PRIMITIVE wordmark, in navy on white. The landing site (`src/style.less`) and the GitHub README banner
-(`PRIMITIVE-IO/primitive`, `brand/`) use the same tokens. `tokens.json` is the source of truth, and the files are identical in both repos.
+the PRIMITIVE wordmark, in navy on white. This repository's README banner (`brand/make_banner.py` → `brand/banner.svg` →
+`images/relaunch-banner.png`) and the landing site (GitLab `primitive-io/landing`, `src/style.less`) use the same tokens.
+`brand/tokens.json` is the source of truth and is identical in both repos. This copy of DESIGN.md uses this repo's paths.
 
 ## Logo
 
 | File | Use |
 |---|---|
-| `primitive-logo.svg` | Primary lockup, navy `#000050` on white |
-| `primitive-logo-reversed.svg` | White lockup on navy sections |
-| `primitive-mark(-reversed).svg` | The circles only (favicon, small marks) |
-| `primitive-wordmark(-reversed).svg` | Wordmark only (site header) |
-| `primitive-logo.png` | The original artwork the SVGs were traced from |
+| `images/brand/primitive-logo.svg` | Primary lockup, navy `#000050` on white |
+| `images/brand/primitive-logo-reversed.svg` | White lockup on navy sections |
+| `images/brand/primitive-mark(-reversed).svg` | The circles only (favicon, small marks) |
+| `images/brand/primitive-wordmark(-reversed).svg` | Wordmark only (site header) |
+| `images/brand/primitive-logo.png` | The original artwork the SVGs were traced from |
 
-The SVGs were vectorized with potrace from `primitive-logo.png`. Don't redraw, recolor (except navy or white), stretch, or add effects.
+The SVGs were vectorized with potrace from `images/brand/primitive-logo.png`. Don't redraw, recolor (except navy or white), stretch, or add effects.
 Keep clear space of at least one circle's height around the logo.
 
 ## Palette: navy on white, cyberspace as accent
@@ -40,7 +41,7 @@ Navy on white (and white on navy) passes WCAG AAA. Muted on white and lavender o
 
 ## Typography
 
-- **Quicksand** (self-hosted variable woff2, Latin subset, SIL OFL; see `src/fonts/Quicksand-OFL.txt`) is the closest thin,
+- **Quicksand** (self-hosted variable woff2, Latin subset, SIL OFL; `brand/quicksand-latin.woff2`, embedded in the banner; see `brand/Quicksand-OFL.txt`) is the closest thin,
   rounded geometric match to the wordmark.
   - Display: weight 300, tracking 0.01em.
   - Wordmark-style labels: weight 600, uppercase, 11-12px, tracking 0.28em.
@@ -50,7 +51,7 @@ Navy on white (and white on navy) passes WCAG AAA. Muted on white and lavender o
 ## Cyberspace, as an accent
 
 - The concept illustration sits in a **navy "cyberspace window"** with a faint cyan grid and glow, and it stays labeled *Concept illustration*.
-  It is recolored with `brand/recolor_svg.py`: navy panels, periwinkle structure, cyan runtime, magenta for the phone.
+  The copy here is `brand/agent-world.svg`, recolored with `brand/recolor_svg.py` in the landing repo: navy panels, periwinkle structure, cyan runtime, magenta for the phone.
 - Navy sections (the swarm, closing) carry the same faint cyan grid. Agent marks use `signal`.
 - Status dots pulse slowly, and stop under `prefers-reduced-motion`.
 
