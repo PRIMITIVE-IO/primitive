@@ -1,16 +1,29 @@
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="images/Primitive.png"><img src="images/logo_small_black.png" width="320" alt="Primitive original logo"></picture></p>
+<p align="center"><a href="https://primitive.io/"><img src="images/relaunch-banner.png" width="100%" alt="Primitive is back: Agent Swarm control in cyberspace. Claude Code and Codex, directed by voice, in one shared 3D world of your code. (Banner generated from brand/make_banner.py; the illustration is concept art.)"></a></p>
 
-# Primitive — Holographic Agent Control
+<p align="center">
+  <a href="https://primitive.io/"><img alt="primitive.io" src="https://img.shields.io/badge/primitive.io-00D2FD?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PGNpcmNsZSBjeD0nNycgY3k9JzEyJyByPSc0JyBmaWxsPSdub25lJyBzdHJva2U9JyMwNDA2MEInIHN0cm9rZS13aWR0aD0nMicvPjxjaXJjbGUgY3g9JzE3JyBjeT0nMTInIHI9JzQnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzA0MDYwQicgc3Ryb2tlLXdpZHRoPScyJy8+PC9zdmc+"></a>
+  <a href="https://primitive.io/join/"><img alt="Request a demo" src="https://img.shields.io/badge/request_a_demo-D8F8B8?style=for-the-badge&labelColor=04060B"></a>
+  <a href="https://twitter.com/PrimitiveVR"><img alt="X @PrimitiveVR" src="https://img.shields.io/badge/@PrimitiveVR-0E1828?style=for-the-badge&logo=x&logoColor=00D2FD"></a>
+  <a href="https://www.youtube.com/channel/UCOR_9Zltvwwv623_4msNp8Q"><img alt="YouTube" src="https://img.shields.io/badge/YouTube-0E1828?style=for-the-badge&logo=youtube&logoColor=FF4FD8"></a>
+  <a href="https://store.steampowered.com/app/777890/Primitive/"><img alt="Original release on Steam" src="https://img.shields.io/badge/original_release-Steam-0E1828?style=for-the-badge&logo=steam&logoColor=09AFFF&labelColor=04060B"></a>
+</p>
 
-Step inside your software. Primitive brings code structure, runtime behavior, and coding agents into a shared 3D workspace in VR, mixed reality, or on a screen. Point at a method, give Claude Code or Codex direction, and inspect the code they change.
+# Primitive is back: Agent Swarm control in cyberspace
 
-[Explore Primitive](https://primitive.io/) · [Request a demo or developer access](https://primitive.io/join/) · [Proxy documentation (access required)](https://github.com/PRIMITIVE-IO/primitive-proxy) · [Unity viewer (access required)](https://github.com/PRIMITIVE-IO/primitive-env/tree/main/Assets/PrimitiveViewer)
+Primitive puts a codebase, its running behaviour and the coding agents working on it into one shared 3D world, in VR or on a screen. Talk to Claude Code and Codex; they answer by pointing at the code, and every change they make shows up in the world as it happens.
 
-[![Watch the original Primitive landing video](images/primitive-film.jpg)](https://www.youtube.com/watch?v=KVZ9u3BIUBg)
+- **The swarm.** Every machine island and project pad has **Start Claude here** / **Start Codex here**. Agents get what you are pointing at as context, edit the code, and narrate the change while highlighting each element they touched.
+- **Every machine is an island.** The machine that holds the source is the home island; phones, servers and headsets where the code runs are satellite islands. Other proxies on your LAN or in the cloud appear as machine islands with their agents.
+- **Runtime and diffs.** Traces of real workflows with every call, object creation and data mutation; source compared against Git HEAD at method level.
+- **Anywhere, together.** OpenXR headsets, a flat screen or the browser viewer. Everyone connected sees the same world, playback position, highlights and agents.
+
+[primitive.io](https://primitive.io/) · [Request a demo or developer access](https://primitive.io/join/) · [Proxy documentation (access required)](https://github.com/PRIMITIVE-IO/primitive-proxy) · [Unity viewer (access required)](https://github.com/PRIMITIVE-IO/primitive-env/tree/main/Assets/PrimitiveViewer) · [support@primitive.io](mailto:support@primitive.io)
+
+[![Watch the original Primitive film](images/primitive-film.jpg)](https://www.youtube.com/watch?v=KVZ9u3BIUBg)
 
 **[Watch the original Primitive film →](https://www.youtube.com/watch?v=KVZ9u3BIUBg)**
 
-The original landing video shows Primitive’s immersive code visualization and collaboration. Holographic Agent Control builds on that foundation.
+The original film shows Primitive’s immersive code visualization and collaboration. The relaunch builds on that foundation.
 
 **This guide covers the current developer build.** It requires access to the proxy and viewer repositories; this repository is the public instruction page. Those repositories are not currently publicly accessible: request developer access before following the clone instructions. Earlier Steam, Viveport, and SideQuest releases are the legacy immersive development environment, and do not provide the agent workspace described here. Their original manual is preserved at the end.
 
