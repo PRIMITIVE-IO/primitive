@@ -2,43 +2,57 @@
 
 **Tagline:** Primitive is back. Agent Swarm control in cyberspace.
 
-The same tokens are used by the landing site (`src/style.less` custom properties) and the GitHub README banner
-(`PRIMITIVE-IO/primitive`, `brand/`). `tokens.json` is the source of truth; keep all three in sync.
+The identity is built on the **official Primitive logo**: a row of outlined circles (2, 3, 5, then 7 in a hex cluster) above
+the PRIMITIVE wordmark, in navy on white. The landing site (`src/style.less`) and the GitHub README banner
+(`PRIMITIVE-IO/primitive`, `brand/`) use the same tokens. `tokens.json` is the source of truth, and the files are identical in both repos.
 
-## Palette: neon on dark
+## Logo
 
-The accents are sampled from the existing brand assets, so the relaunch looks like the original film and logo.
+| File | Use |
+|---|---|
+| `primitive-logo.svg` | Primary lockup, navy `#000050` on white |
+| `primitive-logo-reversed.svg` | White lockup on navy sections |
+| `primitive-mark(-reversed).svg` | The circles only (favicon, small marks) |
+| `primitive-wordmark(-reversed).svg` | Wordmark only (site header) |
+| `primitive-logo.png` | The original artwork the SVGs were traced from |
 
-| Token | Hex | Where it comes from | Use |
-|---|---|---|---|
-| `void` | `#04060B` | | Page background |
-| `deep` | `#0A1020` | | Alternate sections |
-| `panel` | `#0E1828` | | Cards, panels |
-| `panel-hi` | `#132238` | | Featured card |
-| `line` | `#1B3550` | | Hairlines, borders, 48px grid |
-| `text` | `#E6F3F7` | | Headlines, body |
-| `muted` | `#8DA2B5` | | Secondary text |
-| `dim` | `#5B7088` | | Captions, HUD labels |
-| `cyan` | `#00D2FD` | Logo circles (`Primitive.png`) | Primary accent: links, structure, focus rings |
-| `blue` | `#09AFFF` | Prime Sequence background | Secondary accent: runtime, arcs, tags |
-| `phosphor` | `#D8F8B8` | Glow of the original film title card (`caption.jpg`) | Headline emphasis, live status, primary buttons |
-| `signal` | `#FF4FD8` | New | Agents and highlights only, used sparingly |
+The SVGs were vectorized with potrace from `primitive-logo.png`. Don't redraw, recolor (except navy or white), stretch, or add effects.
+Keep clear space of at least one circle's height around the logo.
 
-Glows: `0 0 24px rgba(0,210,253,.35)` (cyan), `0 0 18px rgba(216,248,184,.45)` (phosphor), `0 0 18px rgba(255,79,216,.45)` (signal).
-Text contrast: `text` and `muted` on `void` are well above WCAG AA. Never set body text in `signal` or `blue`.
+## Palette: navy on white, cyberspace as accent
+
+| Token | Hex | Use |
+|---|---|---|
+| `navy` | `#000050` | **Primary.** Sampled from the logo. Logo, headlines, primary buttons, dark sections |
+| `navy-deep` | `#00002E` | Gradients, illustration panel |
+| `navy-hi` | `#14147A` | Hover on navy, cards on navy |
+| `periwinkle` | `#3A3ACF` | Headline emphasis, links on white |
+| `lavender` | `#B8BAF0` | Secondary text and emphasis on navy |
+| `paper` | `#FFFFFF` | Page background |
+| `mist` | `#F4F5FB` | Alternate light sections, cards |
+| `line` | `#DCDEEE` | Hairlines |
+| `text` | `#14143C` | Body text |
+| `muted` | `#585B85` | Secondary text |
+| `cyan` | `#00D2FD` | *Secondary accent:* grid, glow, live dots. Only on navy, never text on white |
+| `signal` | `#FF4FD8` | *Secondary accent:* agents only, small marks |
+
+Navy on white (and white on navy) passes WCAG AAA. Muted on white and lavender on navy pass AA.
 
 ## Typography
 
-- **Display:** system sans (`Segoe UI`, `Helvetica Neue`, Arial), weight 300, tracking -0.04em. This echoes the thin geometric logo wordmark without loading web fonts.
-- **Body:** the same stack, weight 400, line-height 1.65.
-- **HUD / mono:** `JetBrains Mono`, `Cascadia Code`, `SFMono-Regular`, Consolas. Uppercase, 11px, tracking 0.14em, for eyebrows, tags and captions.
+- **Quicksand** (self-hosted variable woff2, Latin subset, SIL OFL; see `src/fonts/Quicksand-OFL.txt`) is the closest thin,
+  rounded geometric match to the wordmark.
+  - Display: weight 300, tracking 0.01em.
+  - Wordmark-style labels: weight 600, uppercase, 11-12px, tracking 0.28em.
+  - Body: weight 500, line-height 1.7.
+- Mono (`JetBrains Mono`, `Cascadia Code`, Consolas) for commands only.
 
-## Motifs
+## Cyberspace, as an accent
 
-- A faint 48px cyan grid ("cyberspace floor") behind the hero, swarm and closing sections, masked at the edges.
-- Pulsing status dots: phosphor for live, signal for agents. Turned off under `prefers-reduced-motion`.
-- Logos: `Primitive.png` (white wordmark plus cyan circles) on dark, and `logo_small.png` in the header and footer.
-- Illustrations are labeled **Concept illustration**. Don't present them as screenshots.
+- The concept illustration sits in a **navy "cyberspace window"** with a faint cyan grid and glow, and it stays labeled *Concept illustration*.
+  It is recolored with `brand/recolor_svg.py`: navy panels, periwinkle structure, cyan runtime, magenta for the phone.
+- Navy sections (the swarm, closing) carry the same faint cyan grid. Agent marks use `signal`.
+- Status dots pulse slowly, and stop under `prefers-reduced-motion`.
 
 ## Voice
 
